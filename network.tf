@@ -25,3 +25,13 @@ resource "google_compute_subnetwork" "restricted-subnet" {
     ip_cidr_range = "192.168.1.0/24"
   }
 }
+
+resource "google_compute_router" "router" {
+  name    = "my-router"
+  region  = google_compute_subnetwork.restricted-subnet.region
+  network = google_compute_network.project-vpc.id
+
+  bgp {
+    asn = 64514
+  }
+}
