@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: python-app
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: app-frontend
+      
+  template:
+    metadata:
+      labels:
+        app: app-frontend
+    spec:
+      containers:
+        - name: python-app
+          image: to add after creting image on GCR
+          ports:
+            - containerPort: 8080
+          env:
+            - name: REDIS_HOST
+              value: redis-service
