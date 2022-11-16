@@ -10,5 +10,12 @@ resource "google_compute_router_nat" "nat-gw" {
   region                             = google_compute_router.router.region
   nat_ip_allocate_option             = var.nat_ip_allocate_option
   source_subnetwork_ip_ranges_to_nat = var.source_subnetwork_ip_ranges_to_nat_name
-
+  subnetwork {
+    name                    = google_compute_subnetwork.management-subnet.id
+    source_ip_ranges_to_nat = ["ALL_IP_RANGES"]
+  }
 }
+
+
+
+  

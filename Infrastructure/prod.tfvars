@@ -13,7 +13,7 @@ ports         = ["22", "80"]
 router_name                        = "router"
 nat_name                           = "nat-gw"
 nat_ip_allocate_option             = "AUTO_ONLY"
-source_subnetwork_ip_ranges_to_nat_name = "ALL_SUBNETWORKS_ALL_IP_RANGES"
+source_subnetwork_ip_ranges_to_nat_name = "LIST_OF_SUBNETWORKS"
 
 
 ###############################
