@@ -10,11 +10,10 @@ ports         = ["22", "80"]
 
 # Router & Nat variables
 
-router_name                        = "router"
-nat_name                           = "nat-gw"
-nat_ip_allocate_option             = "AUTO_ONLY"
+router_name                             = "router"
+nat_name                                = "nat-gw"
+nat_ip_allocate_option                  = "AUTO_ONLY"
 source_subnetwork_ip_ranges_to_nat_name = "LIST_OF_SUBNETWORKS"
-
 
 ###############################
 
@@ -62,22 +61,22 @@ node_pool_location                                  = "us-central1-a"
 node_count                                          = 3
 node_config_preemptible                             = true
 node_config_machine_type                            = "e2-standard-2"
- 
+
 ##############################
 
 # Service Account variables
 
 service_account_gke_name = "iti-service-account"
-project = "abde-367812"
-gke_role = "roles/storage.admin"
-service_account_vm_name = "vm-service-account"
-vm_role = "roles/container.admin"
+project                  = "abde-367812"
+gke_role                 = "roles/storage.admin"
+service_account_vm_name  = "vm-service-account"
+vm_role                  = "roles/container.admin"
 
 ###############################
 
 # Private VM variables
 
-vm_name = "private-vm"
-vm_machine_type = "e2-medium"
-zone = "us-central1-a"
+vm_name          = "private-vm"
+vm_machine_type  = "e2-medium"
+zone             = "us-central1-a"
 vm_machine_image = "debian-cloud/debian-11"

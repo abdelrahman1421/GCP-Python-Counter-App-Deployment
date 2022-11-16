@@ -1,42 +1,42 @@
 # Firewall variables
 
 variable "direction" {
-    type = string
+  type = string
 }
 variable "source_ranges" {
-    type = string
+  type = string
 }
 
 variable "protocol" {
-    type = string 
-    
+  type = string
+
 }
 
 variable "firewall_name" {
-    type = string
+  type = string
 }
 
 variable "ports" {
-    type = list
+  type = list(any)
 }
 ###############################
 
 # Router & Nat variables
 
 variable "router_name" {
-    type = string
+  type = string
 }
 variable "nat_name" {
-    type = string
+  type = string
 }
 
 variable "nat_ip_allocate_option" {
-    type = string 
-    
+  type = string
+
 }
 
 variable "source_subnetwork_ip_ranges_to_nat_name" {
-    type = string
+  type = string
 }
 
 ###############################
@@ -44,19 +44,19 @@ variable "source_subnetwork_ip_ranges_to_nat_name" {
 # VPC variables
 
 variable "vpc_name" {
-    type = string
+  type = string
 }
 variable "auto_create_subnetworks" {
-    type = bool
+  type = bool
 }
 
 variable "routing_mode" {
-    type = string 
-    
+  type = string
+
 }
 
 variable "mtu" {
-    type = number
+  type = number
 }
 
 ###############################
@@ -64,20 +64,20 @@ variable "mtu" {
 # Management Subnet variables
 
 variable "management_subnet_name" {
-    type = string
+  type = string
 }
 
 variable "ip_cidr_range_mang" {
-    type = string 
-    
+  type = string
+
 }
 
 variable "region_mang" {
-    type = string
+  type = string
 }
 
 variable "private_ip_google_access_mang" {
-    type = bool
+  type = bool
 }
 
 ###############################
@@ -85,82 +85,82 @@ variable "private_ip_google_access_mang" {
 # Restricted Subnet variables
 
 variable "restricted_subnet_name" {
-    type = string
+  type = string
 }
 
 variable "ip_cidr_range_res" {
-    type = string 
-    
+  type = string
+
 }
 
 variable "region_res" {
-    type = string
+  type = string
 }
 
 variable "private_ip_google_access_res" {
-    type = bool
+  type = bool
 }
 #################################
 #################################
 
 # GKE variables
 variable "cluster_name" {
-    type = string
+  type = string
 }
 
 variable "location" {
-    type = string
+  type = string
 }
 
 variable "remove_default_node_pool" {
-    type = bool
+  type = bool
 }
 
 variable "initial_node_count" {
-    type = number
+  type = number
 }
 
 variable "master_authorized_networks_cidr_blocks_display_name" {
-    type = string
+  type = string
 }
 variable "cluster_ipv4_cidr_block" {
-    type = string
+  type = string
 }
 
 variable "services_ipv4_cidr_block" {
-    type = string
+  type = string
 }
 
 variable "enable_private_nodes" {
-    type = bool
+  type = bool
 }
 
 variable "enable_private_endpoint" {
-    type = bool
+  type = bool
 }
 
 variable "master_ipv4_cidr_block" {
-    type = string
+  type = string
 }
 
 variable "node_pool_name" {
-    type = string
+  type = string
 }
 
 variable "node_pool_location" {
-    type = string
+  type = string
 }
 
 variable "node_count" {
-    type = number
+  type = number
 }
 
 variable "node_config_preemptible" {
-    type = bool
+  type = bool
 }
 
 variable "node_config_machine_type" {
-    type = string
+  type = string
 }
 
 
@@ -172,23 +172,23 @@ variable "node_config_machine_type" {
 # Service Account variables
 
 variable "service_account_gke_name" {
-    type = string
+  type = string
 }
 
 variable "project" {
-    type = string
+  type = string
 }
 
 variable "gke_role" {
-    type = string
+  type = string
 }
 
 variable "service_account_vm_name" {
-    type = string
+  type = string
 }
 
 variable "vm_role" {
-    type = string
+  type = string
 }
 
 ####################################
@@ -197,18 +197,18 @@ variable "vm_role" {
 # Private VM variables
 
 variable "vm_name" {
-    type = string
+  type = string
 }
 
 variable "vm_machine_type" {
-    type = string
+  type = string
 }
 
 variable "vm_machine_image" {
-    type = string
+  type = string
 }
 
 variable "zone" {
-    type = string
+  type = string
 }
 
