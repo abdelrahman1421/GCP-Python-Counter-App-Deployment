@@ -107,12 +107,17 @@ gcloud container clusters get-credentials project-cluster --zone us-central1-a -
 > - Then  login to docker using your `username` and `password`
 > - Build your images
 > - Push your image to your GCR
+> - Pull redis image form dockerhub then tag it and push it also to your GCR
 ```
 cd GCP_FInal_Project/App
 docker login
 gcloud auth configure-docker
-docker build . -t gcr.io/`Your Project ID`/`Image Name:Tag`
-docker push gcr.io/`Your Project ID`/`Image Name:Tag`
+docker build . -t gcr.io/${PROJECT_ID}/Image Name:Tag
+docker push gcr.io/${PROJECT_ID}/Image Name:Tag
+docker pull redis
+docker tag <redis image ID> gcr.io/${PROJECT_ID}/Image Name:Tag
+docker push gcr.io/${PROJECT_ID}/Image Name:Tag
+
 ```
 ![Screenshot from 2022-11-16 21-58-38](https://user-images.githubusercontent.com/73159522/202289368-e41d4566-aff5-4446-908a-ab26107cf1f3.png)
 
@@ -120,13 +125,17 @@ docker push gcr.io/`Your Project ID`/`Image Name:Tag`
 
 ![Screenshot from 2022-11-16 22-06-53](https://user-images.githubusercontent.com/73159522/202289451-0d71bbf4-d959-4d5c-9a9a-825af81b4370.png)
 
+![Screenshot from 2022-11-19 15-14-57](https://user-images.githubusercontent.com/73159522/202852688-cf94a772-468d-43ee-b754-44327831b7d6.png)
+
 ## Third Step: App Deployment 
 ### 1. Change Image In `app_deployment.yaml`
 > - Change cirectory to `App`
-> - Then Edit `app_deployment.yaml` you will find image at line `20`
+> - Then Edit `app_deployment.yaml` you will find image at line `20` with you app image name
+> - Also Edit `redis_deployment.yaml` you will find image at line `19` with you app image name
 ```
 cd GCP_FInal_Project/Deployment
 vi app_deployment.yaml
+vi redis_deployment.yaml
 ```
 > - Change image to your image with right tag
 ### 3. Apply Deployments To GKE
