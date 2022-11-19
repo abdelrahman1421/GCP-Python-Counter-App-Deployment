@@ -8,7 +8,7 @@ resource "google_project_iam_custom_role" "gke-custom-role" {
   role_id     = "gke_custom_role"
   title       = "gke-custom-role"
   description = "gke-custom-role"
-  permissions = ["storage.buckets.get","storage.buckets.list","storage.buckets.update","storage.objects.get","storage.objects.list","storage.objects.update"]
+  permissions = ["storage.buckets.get","storage.buckets.update","storage.objects.get","storage.objects.update"]
 }
 
 resource "google_project_iam_binding" "iti-service-account-iam" {
