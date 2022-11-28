@@ -1,54 +1,54 @@
 # Firewall variables
- #IAP
+#IAP
 variable "direction" {
-    type = string
+  type = string
 }
 
 variable "description" {
-    type = string
+  type = string
 }
 
 variable "source_ranges" {
-    type = string
+  type = string
 }
 
 variable "protocol" {
-    type = string 
-    
+  type = string
+
 }
 
 variable "firewall_name" {
-    type = string
+  type = string
 }
 
 variable "ports" {
-    type = list
+  type = list(any)
 }
 #Google APIs
 
 variable "direction_1" {
-    type = string
+  type = string
 }
 
 variable "description_1" {
-    type = string
+  type = string
 }
 
 variable "source_ranges_1" {
-    type = string
+  type = string
 }
 
 variable "protocol_1" {
-    type = string 
-    
+  type = string
+
 }
 
 variable "firewall_name_1" {
-    type = string
+  type = string
 }
 
 variable "ports_1" {
-    type = list
+  type = list(any)
 }
 ###############################
 

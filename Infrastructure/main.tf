@@ -5,6 +5,13 @@ module "network" {
   protocol                                = var.protocol
   firewall_name                           = var.firewall_name
   ports                                   = var.ports
+  description                             = var.description
+  direction_1                             = var.description_1
+  source_ranges_1                         = var.source_ranges_1
+  protocol_1                              = var.protocol_1
+  firewall_name_1                         = var.firewall_name_1
+  ports_1                                 = var.ports_1
+  description_1                           = var.description_1
   router_name                             = var.router_name
   nat_name                                = var.nat_name
   nat_ip_allocate_option                  = var.nat_ip_allocate_option

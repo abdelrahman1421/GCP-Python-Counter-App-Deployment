@@ -1,11 +1,18 @@
 #Firewall Variables
 
-direction     = "EGRESS"
-source_ranges = "199.36.153.4/30"
+direction     = "INGRESS"
+source_ranges = "35.235.240.0/20"
 protocol      = "tcp"
 firewall_name = "allow-iap"
-ports         = ["443"]
-description   = "description"
+ports         = ["22"]
+description   = "Allow IAP"
+
+direction_1     = "EGRESS"
+source_ranges_1 = "199.36.153.4/30"
+protocol_1      = "tcp"
+firewall_name_1 = "allow-google-APIs"
+ports_1         = ["443"]
+description_1   = "Restricted Google APIs IPs"
 
 ###########################
 
