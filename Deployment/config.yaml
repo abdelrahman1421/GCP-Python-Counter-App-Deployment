@@ -6,7 +6,7 @@ data:
   ENVIRONMENT: PROD
   HOST: localhost
   PORT: "8080"
-  REDIS_HOST: localhost
+  REDIS_HOST: redis-service
   REDIS_PORT: "6379"
   REDIS_DB: "0"
 
