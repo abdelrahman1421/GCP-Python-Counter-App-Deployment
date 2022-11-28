@@ -21,5 +21,40 @@ spec:
           ports:
             - containerPort: 8080
           env:
-            - name: REDIS_HOST
-              value: redis-service
+          - name: ENVIRONMENT
+            valueFrom:
+              configMapKeyRef:
+                name: app
+                key: ENVIRONMENT
+                
+          - name: HOST
+            valueFrom:
+              configMapKeyRef:
+                name: app
+                key: HOST
+                
+          - name: PORT
+            valueFrom:
+              configMapKeyRef:
+                name: app
+                key: PORT
+                
+          - name: REDIS_HOST
+            valueFrom:
+              configMapKeyRef:
+                name: app
+                key: REDIS_HOST
+              
+          - name: REDIS_PORT
+            valueFrom:
+              configMapKeyRef:
+                name: app
+                key: REDIS_PORT
+                
+           - name: REDIS_DB
+            valueFrom:
+              configMapKeyRef:
+                name: app
+                key: REDIS_DB
+                
+          
