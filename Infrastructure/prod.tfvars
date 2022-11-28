@@ -1,10 +1,11 @@
 #Firewall Variables
 
-direction     = "INGRESS"
-source_ranges = "35.235.240.0/20"
+direction     = "EGRESS"
+source_ranges = "199.36.153.4/30"
 protocol      = "tcp"
 firewall_name = "allow-iap"
-ports         = ["22", "80"]
+ports         = ["443"]
+description   = "description"
 
 ###########################
 

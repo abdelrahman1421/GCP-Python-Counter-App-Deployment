@@ -1,8 +1,13 @@
 # Firewall variables
-
+ #IAP
 variable "direction" {
     type = string
 }
+
+variable "description" {
+    type = string
+}
+
 variable "source_ranges" {
     type = string
 }
@@ -19,6 +24,33 @@ variable "firewall_name" {
 variable "ports" {
     type = list
 }
+#Google APIs
+
+variable "direction_1" {
+    type = string
+}
+
+variable "description_1" {
+    type = string
+}
+
+variable "source_ranges_1" {
+    type = string
+}
+
+variable "protocol_1" {
+    type = string 
+    
+}
+
+variable "firewall_name_1" {
+    type = string
+}
+
+variable "ports_1" {
+    type = list
+}
+
 ###############################
 
 # Router & Nat variables
