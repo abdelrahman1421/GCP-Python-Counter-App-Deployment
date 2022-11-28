@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: python-app
-          image: to add after creting image on GCR
+          image: gcr.io/abde-367812/iti:latest
           ports:
             - containerPort: 8080
           env:
