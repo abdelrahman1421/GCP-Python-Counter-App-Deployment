@@ -1,6 +1,6 @@
-# GCP_FInal_Project
+# Project Description
 
-The project is to Deploy a simple python application on GKE cluster, The image used in deployment is builed and pushed to
+The project is to Deploy a simple Python application on the GKE cluster, The image used in deployment is built and pushed to
 GCR and GKE use it to pull images.
 # Projetc Overview And Architecture
 ![GCP horizontal framework](https://user-images.githubusercontent.com/73159522/202285588-7aefb042-b6ae-4661-8ef0-6b25666c7880.jpeg)
@@ -10,13 +10,13 @@ GCR and GKE use it to pull images.
 | ------ | ------ |
 | [ Terraform ](https://www.terraform.io) | Terraform is an open-source infrastructure as a code software. |
 | [ Google Kubernetes Engine (GKE) ](https://cloud.google.com/kubernetes-engine) | Google Kubernetes Engine (GKE) is a managed, production-ready environment for running containerized applications. |
-| [ Google Container Registery (GCR) ](https://cloud.google.com/container-registry) | Store, manage, and secure your Docker container images. |
+| [ Google Container Registry (GCR) ](https://cloud.google.com/container-registry) | Store, manage, and secure your Docker container images. |
 | [ Docker ](https://www.docker.com) | Docker is a software tool used to deliver software in containers.|
 | [ Gcloud ](https://cloud.google.com/sdk/gcloud) | The Google Cloud CLI is a set of tools to create and manage Google Cloud resources. You can use these tools to perform many common platform tasks from the command line or through scripts and other automation. |
 
 
 ## Configure Infrastructure Using Terraform :
-Four modules were designed to provide a stable Infrastructure to the project
+Four modules were designed to provide a stable Infrastructure for the project
 - ###  Network Module Contains The Following Resources :
   - VPC that project will be assigned to
   - Two subnets one for GKE and another for Bastion Host
@@ -107,7 +107,7 @@ gcloud container clusters get-credentials project-cluster --zone us-central1-a -
 > - Then  login to docker using your `username` and `password`
 > - Build your images
 > - Push your image to your GCR
-> - Pull redis image form dockerhub then tag it and push it also to your GCR
+> - Pull Redis image form docker hub then tag it and push it also to your GCR
 ```
 cd GCP_FInal_Project/App
 docker login
@@ -129,7 +129,7 @@ docker push gcr.io/${PROJECT_ID}/Image Name:Tag
 
 ## Third Step: App Deployment 
 ### 1. Change Image In `app_deployment.yaml`
-> - Change cirectory to `App`
+> - Change directory to `App`
 > - Then Edit `app_deployment.yaml` you will find image at line `20` with you app image name
 > - Also Edit `redis_deployment.yaml` you will find image at line `19` with you app image name
 ```
@@ -137,7 +137,7 @@ cd GCP_FInal_Project/Deployment
 vi app_deployment.yaml
 vi redis_deployment.yaml
 ```
-> - Change image to your image with right tag
+> - Change the image to your image with the right tag
 ### 3. Apply Deployments To GKE
 
 ```
@@ -155,7 +155,7 @@ kubectl apply -f app_loadbalancer_svc.yaml
 kubectl get svc
 ```
 > - Copy `load-balancer` IP followed by Port
-> - Paste it in browser and chek app
+> - Paste it in the browser and check app
 
 
 ## Final Result
